@@ -55,4 +55,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # custom gem
 gem 'rspec-rails'
-# gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.0.0'

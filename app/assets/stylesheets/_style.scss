@@ -1,0 +1,52 @@
+body {
+  background-color: $primary;
+  font-size: $base-font-size;
+}
+
+a {
+  color: $body-color;
+}
+
+nav {
+  ul {
+
+  }
+
+  li {
+
+  }
+
+  a {
+
+    &.hover {
+      color: $green;
+    }
+  }
+}
+
+.box {
+  background-color: red;
+  width: 200px;
+  height: 300px;
+  margin-bottom: 20px;
+
+  &:nth-child(odd) {
+    @include border-radius(30px);
+  }
+
+  &:nth-child(even) {
+    @include border-radius(999px);
+  }
+
+  &:hover {
+    background-color: $yellow;
+  }
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+                 border: $radius;
+}
