@@ -7,7 +7,5 @@ Rails.application.routes.draw do
 
   # crud for parks
   # get '/parks/:name', to: 'parks#show_by_name'
-  resources :parks, except: [:create, :update, :destroy]
-
-
+  resources :parks, except: [:update, :destroy]
 end

@@ -58,3 +58,6 @@ gem 'rspec-rails' # for testing
 gem 'bootstrap', '~> 4.0.0' # for css frameworks
 gem 'pry' # for better rails c
 gem 'faker' # to fake data on db:seed
+# gem "bootstrap_form",
+#     git: "https://github.com/bootstrap-ruby/rails-bootstrap-forms.git",
+#     branch: "master"

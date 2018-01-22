@@ -1,0 +1,16 @@
+<% provide(:title, 'All Parks') %>
+
+<ul>
+  <% @all_parks.each do |indiv_park| %>
+  <li>
+    <h3><%= indiv_park.name %></h3>
+    <%= image_tag indiv_park.picture %>
+    <p>
+      <%= indiv_park.description %><br>
+      <%= link_to "View", park_path(indiv_park), class: "btn btn-primary" %>
+    </p>
+  </li>
+  <% end %>
+</ul>
+
+<!-- <pre><%= @all_parks.inspect %></pre> -->
