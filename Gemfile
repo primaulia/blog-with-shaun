@@ -61,3 +61,4 @@ gem 'faker' # to fake data on db:seed
 # gem "bootstrap_form",
 #     git: "https://github.com/bootstrap-ruby/rails-bootstrap-forms.git",
 #     branch: "master"
+gem 'devise'
