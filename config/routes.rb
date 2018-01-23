@@ -4,8 +4,7 @@ Rails.application.routes.draw do
   root 'pages#home' # root is equal to get '/' => controller#action
   get '/about', to: 'pages#about'
 
-
   # crud for parks
   # get '/parks/:name', to: 'parks#show_by_name'
-  resources :parks, except: [:update, :destroy]
+  resources :parks
 end
