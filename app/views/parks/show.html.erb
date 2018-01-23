@@ -5,4 +5,7 @@
   <p><%= @searched_park.description %></p>
 
   <%= image_tag @searched_park.picture %>
+
+  <%= link_to "Edit", edit_park_path(@searched_park), class: "btn btn-info" %>
+  <%= link_to "Delete", park_path(@searched_park), method: :delete, class: "btn btn-danger" %>
 </div>

@@ -8,6 +8,7 @@
     <p>
       <%= indiv_park.description %><br>
       <%= link_to "View", park_path(indiv_park), class: "btn btn-primary" %>
+      <%= link_to "Delete", park_path(indiv_park), method: :delete, class: "btn btn-danger" %>
     </p>
   </li>
   <% end %>
