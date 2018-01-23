@@ -15,12 +15,20 @@
 #   new_user.save
 # end
 
-10.times do |index|
-  new_park = Park.new
+# 10.times do |index|
+#   new_park = Park.new
+#
+#   new_park.name = 'Park'
+#   new_park.description = 'Lorem Ipsum'
+#   new_park.picture = Faker::LoremPixel.image("300x300", false, 'nature')
+#
+#   new_park.save
+# end
 
-  new_park.name = 'Park'
-  new_park.description = 'Lorem Ipsum'
-  new_park.picture = Faker::LoremPixel.image("300x300", false, 'nature')
-
-  new_park.save
+5.times do |index|
+  Post.create(
+    title: "Post##{index + 1}",
+    body: "Lorem Ipsum",
+    user_id: 22
+  )
 end
