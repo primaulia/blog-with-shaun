@@ -7,21 +7,9 @@ a {
   color: $body-color;
 }
 
-nav {
-  ul {
-
-  }
-
-  li {
-
-  }
-
-  a {
-
-    &.hover {
-      color: $green;
-    }
-  }
+h1, h2, h3 {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .box {
