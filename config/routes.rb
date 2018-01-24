@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # crud for parks
   # get '/parks/:name', to: 'parks#show_by_name'
   resources :parks
-  resources :posts, only: [:new, :create]
+  resources :posts, only: [:new, :create, :show]
 
   # devise routes
   devise_for :users,

@@ -13,7 +13,7 @@
         <div class="card-body">
           <h5 class="card-title"><%= post.title %></h5>
           <p class="card-text"><%= post.body %></p>
-          <a href="#" class="card-link">View</a>
+          <%= link_to "View", post_path(post), class: "btn btn-info" %>
         </div>
       </div>
     </div>
