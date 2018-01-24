@@ -11,5 +11,7 @@ class PostsController < ApplicationController
     @all_comments_the_post_has = @the_post.comments
 
     @new_comment_by_user = current_user.comments.new
+
+    # render json: @all_comments_the_post_has
   end
 end
