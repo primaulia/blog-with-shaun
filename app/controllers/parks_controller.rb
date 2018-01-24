@@ -1,5 +1,5 @@
 class ParksController < ApplicationController
-  # skip_before_action :verify_authenticity_token / disable authenticity token
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @all_parks = Park.all.order(created_at: :asc)
