@@ -8,6 +8,8 @@ class PostsController < ApplicationController
 
   def show
     @the_post = Post.find(params[:id])
-    # find all comments for this post
+    @all_comments_the_post_has = @the_post.comments
+
+    @new_comment_by_user = current_user.comments.new
   end
 end

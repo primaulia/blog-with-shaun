@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # get '/parks/:name', to: 'parks#show_by_name'
   resources :parks
   resources :posts, only: [:new, :create, :show]
+  resources :comments, only: [:create]
 
   # devise routes
   devise_for :users,
