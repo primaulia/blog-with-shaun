@@ -1,5 +1,9 @@
 <% provide(:title, "Post with id: #{@the_post.id}") %>
 
+<p>
+  <%= @the_post.body %>
+</p>
+
 <h2>Comments</h2>
 
 <!-- Write a form to create new comment for this post -->
@@ -14,6 +18,9 @@
     <%= f.label :body %>
     <%= f.text_field :body, class: 'form-control' %>
   </div>
+
+  <%= f.hidden_field :post_id, value: @the_post.id %>
+  <%= f.hidden_field :creator_id, value: current_user.id %>
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>
 
