@@ -1,40 +1,33 @@
 <% provide(:title, "Home") %>
 
+<% if current_user %>
+  <h2>My posts</h2>
+  <div class="row">
+    <% @my_posts.each do |post| %>
+    <div class="col-4 my-2">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= post.title %></h5>
+          <p class="card-text"><%= post.body %></p>
+          <a href="#" class="card-link">View</a>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+<% end %>
+
 <h2 class="py1">All posts</h2>
 <div class="row">
-  <div class="col-sm">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
+  <% @all_posts.each do |post| %>
+    <div class="col-4 my-2">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= post.title %></h5>
+          <p class="card-text"><%= post.body %></p>
+          <a href="#" class="card-link">View</a>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col-sm">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
-      </div>
-    </div>
-  </div>
+  <% end %>
 </div>
-
-<h2 class="py1">My posts</h2>

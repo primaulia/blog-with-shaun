@@ -29,6 +29,6 @@
   Post.create(
     title: "Post##{index + 1}",
     body: "Lorem Ipsum",
-    user_id: 22
+    user_id: 24
   )
 end
