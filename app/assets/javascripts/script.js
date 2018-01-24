@@ -1,1 +1,3 @@
-console.log('hello')
+$(document).on('turbolinks:load', function() {
+  console.log('hey');
+})
