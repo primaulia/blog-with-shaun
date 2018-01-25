@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'pages#home' # root is equal to get '/' => controller#action
   get '/about', to: 'pages#about'
+  get '/notifications', to: 'comments#notifications' # get all comments for all of the user's posts
+
 
   # crud for parks
   # get '/parks/:name', to: 'parks#show_by_name'
