@@ -4,7 +4,7 @@ class PagesController < ApplicationController
     # list out all posts that the current user wrote
     # render that in the page
 
-    @all_posts = Post.all
+    @posts = Post.all
     @my_posts = current_user.posts if current_user
   end
 

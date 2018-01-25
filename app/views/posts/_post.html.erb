@@ -1,0 +1,11 @@
+<!-- partial for @all_posts and @my_posts -->
+
+<div class="col-4 my-2">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= post.title %></h5>
+      <p class="card-text"><%= post.body %></p>
+      <%= link_to "View", post_path(post), class: "btn btn-info" %>
+    </div>
+  </div>
+</div>

@@ -7,33 +7,11 @@
 <% if current_user %>
   <h2>My posts</h2>
   <div class="row">
-    <% @my_posts.each do |post| %>
-    <div class="col-4 my-2">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title"><%= post.title %></h5>
-          <p class="card-text"><%= post.body %></p>
-          <%= link_to "View", post_path(post), class: "btn btn-info" %>
-        </div>
-      </div>
-    </div>
-    <% end %>
+    <%= render @my_posts %>
   </div>
 <% end %>
 
-r
-
 <h2 class="py1">All posts</h2>
 <div class="row">
-  <% @all_posts.each do |post| %>
-    <div class="col-4 my-2">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title"><%= post.title %></h5>
-          <p class="card-text"><%= post.body %></p>
-          <a href="#" class="card-link">View</a>
-        </div>
-      </div>
-    </div>
-  <% end %>
+  <%= render @posts %>
 </div>
