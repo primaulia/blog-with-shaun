@@ -1,3 +1,9 @@
 $(document).on('turbolinks:load', function() {
-  console.log('hey');
+
+
+
+  $('#btn').on('click', (event) => {
+    event.preventDefault()
+    /* Act on the event */
+  })
 })

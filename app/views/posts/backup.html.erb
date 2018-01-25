@@ -1,0 +1,13 @@
+<% @all_comments_the_post_has.each_with_index do |comment, index| %>
+<div class="card mb-3">
+ <div class="card-body">
+   <h5 class="card-title"><%= comment.title  %></h5>
+   <h6 class="card-subtitle mb-2 text-muted">Commented by <%= comment.creator.name  %> (<%= comment.creator.email %>)</h6>
+   <p class="card-text">
+     <%= comment.body %>
+   </p>
+   <a href="#" class="card-link">Card link</a>
+   <a href="#" class="card-link">Another link</a>
+ </div>
+</div>
+<% end %>

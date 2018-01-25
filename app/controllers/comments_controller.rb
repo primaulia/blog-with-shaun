@@ -1,8 +1,17 @@
 class CommentsController < ApplicationController
   def create
-    new_comment = current_user.comments_made.new(comment_params)
-    current_user.comments_made << new_comment
-    redirect_to post_path(new_comment.post)
+    @comment = current_user.comments_made.new(comment_params)
+    current_user.comments_made << @comment
+
+    respond_to do |format|
+      # format.html { render html: 'html flow here'} # normal post req flow
+      format.js
+      # format.json {}
+    end
+
+
+    # no more redirection for js
+    # redirect_to post_path(new_comment.post)
   end
 
   def notifications

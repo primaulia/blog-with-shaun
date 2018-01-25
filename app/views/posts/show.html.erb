@@ -1,10 +1,13 @@
 <% provide(:title, "Post with id: #{@the_post.id}") %>
 
-<p>
-  <%= @the_post.body %>
-</p>
-
-<div class="row align-items-start comment-list">
+<div class="row">
+  <div class="col-12">
+    <p>
+      <%= @the_post.body %>
+    </p>
+  </div>
+</div>
+<div class="row align-items-start">
   <div class="col-12">
     <h2>Comments</h2>
   </div>
@@ -12,7 +15,7 @@
 
     <!-- Write a form to create new comment for this post -->
 
-    <%= form_for @new_comment_by_user do |f| %>
+    <%= form_for @new_comment_by_user, remote: true do |f| %>
     <div class="form-group">
       <%= f.label :title %>
       <%= f.text_field :title, class: 'form-control form-control-sm' %>
@@ -27,22 +30,11 @@
     <%= f.submit class: 'btn btn-primary' %>
     <% end %>
   </div>
-  <div class="col-6">
-    <ul>
-      <% @all_comments_the_post_has.each_with_index do |comment, index| %>
-      <div class="card mb-3">
-       <div class="card-body">
-         <h5 class="card-title"><%= comment.title  %></h5>
-         <h6 class="card-subtitle mb-2 text-muted">Commented by <%= comment.creator.name  %> (<%= comment.creator.email %>)</h6>
-         <p class="card-text">
-           <%= comment.body %>
-         </p>
-         <a href="#" class="card-link">Card link</a>
-         <a href="#" class="card-link">Another link</a>
-       </div>
-      </div>
-      <% end %>
-    </ul>
+  <div class="col-6 comment-list">
+    <%= render @comments  %>
+    <!-- check if @comments is an array -->
+    <!-- if it's an array, it'll loop it -->
+    <!-- if it's not an array, dont do anything -->
   </div>
 </div>
 
