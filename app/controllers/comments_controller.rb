@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   def create
     new_comment = current_user.comments.new(comment_params)
     current_user.comments << new_comment
-    redirect_to root_path
+    redirect_to post_path(new_comment.post)
   end
 
   private

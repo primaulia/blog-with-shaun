@@ -4,24 +4,42 @@
   <%= @the_post.body %>
 </p>
 
-<h2>Comments</h2>
-
-<!-- Write a form to create new comment for this post -->
-
-<%= form_for @new_comment_by_user do |f| %>
-  <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control' %>
+<div class="row align-items-start">
+  <div class="col-12">
+    <h2>Comments</h2>
   </div>
+  <div class="col-6">
 
-  <div class="form-group">
-    <%= f.label :body %>
-    <%= f.text_field :body, class: 'form-control' %>
+    <!-- Write a form to create new comment for this post -->
+
+    <%= form_for @new_comment_by_user do |f| %>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control form-control-sm' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :body %>
+      <%= f.text_area :body, class: 'form-control form-control-sm', rows: '3' %>
+    </div>
+
+    <%= f.hidden_field :post_id, value: @the_post.id %>
+    <%= f.submit class: 'btn btn-primary' %>
+    <% end %>
   </div>
-
-  <%= f.hidden_field :post_id, value: @the_post.id %>
-  <%= f.submit class: 'btn btn-primary' %>
-<% end %>
+  <div class="col-6">
+    <ul>
+      <% @all_comments_the_post_has.each_with_index do |comment, index| %>
+      <li>
+        <h3><%= comment.title  %></h3>
+        <p>
+          <%= comment.body %>
+        </p>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
 
 
