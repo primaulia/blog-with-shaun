@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :comments_made, foreign_key: "creator_id",
                            class_name: "Comment"
   has_many :comments, through: :posts
+  has_many :votes
 end
