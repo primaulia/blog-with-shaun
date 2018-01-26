@@ -63,3 +63,5 @@ gem 'faker' # to fake data on db:seed
 #     branch: "master"
 gem 'devise'
 gem 'jquery-rails'
+gem 'sprockets', '>=3.0.0.beta'
+gem 'sprockets-es6'
