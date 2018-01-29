@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about'
   get '/notifications', to: 'comments#notifications' # get all comments for all of the user's posts
 
+  # post routes to upvote
+  post '/upvote/:post_id', as: 'upvote', to: 'votes#upvote'
+  post '/downvote/:post_id', as: 'downvote', to: 'votes#downvote'
+  # post routes to downvote
+
 
   # crud for parks
   # get '/parks/:name', to: 'parks#show_by_name'

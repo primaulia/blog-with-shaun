@@ -6,8 +6,8 @@
     <div class="card-body">
       <p class="card-text"><%= post.body %></p>
 
-      <%= link_to "Upvote", "#", class: "btn btn-outline-success" %>
-      <%= link_to "Downvote", "#", class: "btn btn-outline-danger" %>
+      <%= link_to "Upvote", upvote_path(post), method: :post, class: "btn btn-outline-success" %>
+      <%= link_to "Downvote", downvote_path(post), method: :post, class: "btn btn-outline-danger" %>
       <br><br>
       <%= link_to "View", post_path(post), class: "btn btn-info" %>
     </div>
