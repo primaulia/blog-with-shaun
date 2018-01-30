@@ -2,7 +2,11 @@
 
 <div class="col-4 my-2">
   <div class="card">
-    <h5 class="card-header"><%= post.title %></h5>
+    <h5 class="card-header">
+      <%= link_to post_path(post) do %>
+        <%= post.title %>
+      <% end %>
+    </h5>
     <div class="card-body">
       <p class="card-text"><%= post.body %></p>
 
@@ -25,9 +29,6 @@
           <span class="badge badge-danger"><%= post.downvote_count %></span>
         <% end %>
       <% end %>
-
-      <br><br>
-      <%= link_to "View", post_path(post), class: "btn btn-info" %>
     </div>
   </div>
 </div>

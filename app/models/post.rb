@@ -27,5 +27,4 @@ class Post < ApplicationRecord
   def vote_counter(score_cat)
     self.votes.where(score:score_cat).sum(:score)
   end
-
 end
