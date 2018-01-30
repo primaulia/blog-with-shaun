@@ -4,25 +4,28 @@ class Post < ApplicationRecord
   has_and_belongs_to_many :tags
   has_many :votes, as: :votable
 
-  def can_vote?
-    current_votes = current_user.votes #votes from the user
-
+  def can_vote?(current_user)
+    current_votes = self.votes #votes from the user
     return true if current_votes.empty?
-    vote_count_by_current_user = current_votes.where(votable_id: self.id, votable_type: 'Post').count
 
-    if vote_count_by_current_user == 0
-      return true
-    else
-      return false
-    end
+    return false if current_votes.includes(:user).where(user: current_user.id).count
+
+    true
   end
 
   def upvote_count
-    #
+    vote_counter(1)
+
   end
 
   def downvote_count
-    #
+    vote_counter(-1).abs
+  end
+
+  private
+
+  def vote_counter(score_cat)
+    self.votes.where(score:score_cat).sum(:score)
   end
 
 end

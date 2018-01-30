@@ -11,19 +11,12 @@ class User < ApplicationRecord
   has_many :votes
 
   def upvote(post_id)
-    # get self post obj
-    # build a vote obj with score 1
-    # tag it to the current_user
     return vote(1, post_id) if can_vote?
-
     p 'cannot vote anymore'
   end
 
   def downvote(post_id)
-    # same like upvote
-    # build a vote obj with score -1
     return vote(-1, post_id) if can_vote?
-
     p 'cannot vote anymore'
   end
 
@@ -38,10 +31,6 @@ class User < ApplicationRecord
     else
       return false
     end
-  end
-
-  def disable_vote?
-    return true if can_vote?
   end
 
   private

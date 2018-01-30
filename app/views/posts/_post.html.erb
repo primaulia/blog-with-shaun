@@ -6,8 +6,26 @@
     <div class="card-body">
       <p class="card-text"><%= post.body %></p>
 
-      <%= link_to "Upvote", upvote_path(post), method: :post, class: "btn btn-outline-success" %>
-      <%= link_to "Downvote", downvote_path(post), method: :post, class: "btn btn-outline-danger" %>
+      <% if post.can_vote?(current_user) %>
+        <%= link_to upvote_path(post), class: "btn btn-outline-success", method: true do %>
+          Upvote
+          <span class="badge badge-success"><%= post.upvote_count %></span>
+        <% end %>
+        <%= link_to downvote_path(post), class: "btn btn-outline-danger", method: true do %>
+          Downvote
+          <span class="badge badge-danger"><%= post.downvote_count %></span>
+        <% end %>
+      <% else %>
+        <%= link_to upvote_path(post), class: "btn btn-outline-success disabled", method: true do %>
+          Upvote
+          <span class="badge badge-success"><%= post.upvote_count %></span>
+        <% end %>
+        <%= link_to downvote_path(post), class: "btn btn-outline-danger disabled", method: true do %>
+          Downvote
+          <span class="badge badge-danger"><%= post.downvote_count %></span>
+        <% end %>
+      <% end %>
+
       <br><br>
       <%= link_to "View", post_path(post), class: "btn btn-info" %>
     </div>
