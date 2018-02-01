@@ -7,8 +7,8 @@ class PagesController < ApplicationController
     @posts = Post
               .left_joins(:votes)
               .group(:id)
-              .order('SUM(votes.score) ASC')
-    @my_posts = current_user.postsq if current_user
+              .order('COALESCE(SUM(votes.score)) DESC')
+    @my_posts = current_user.posts if current_user
   end
 
   def about
